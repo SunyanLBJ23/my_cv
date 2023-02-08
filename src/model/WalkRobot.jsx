@@ -16,6 +16,7 @@ export function WalkRobot(props) {
   const { actions } = useAnimations(animations, group)
   useEffect(()=>{
     actions['Take 001'].play()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
     <group ref={group} {...props} dispose={null}>

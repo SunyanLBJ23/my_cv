@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Environment, OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import React from 'react'
+import './App.css'
+import { WalkRobot } from './model/WalkRobot'
+import * as THREE from 'three'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Canvas>
+        <Environment files={'/hdr/hdr.hdr'} background/>
+        <OrbitControls makeDefault/>
+        <WalkRobot/>
+        <mesh position={[0,-0.5,0]}>
+          <boxGeometry args={[5,1,5]}/>
+          <meshStandardMaterial color="gold" roughness={0} metalness={1} side={THREE.DoubleSide}/>
+        </mesh>
+      </Canvas>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

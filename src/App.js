@@ -5,19 +5,19 @@ import './App.css'
 import { WalkRobot } from './model/WalkRobot'
 import * as THREE from 'three'
 import { Ralph } from './model/Ralph'
+import MainPage from './views/MainPage'
 
 function App() {
   return (
     <div className='app'>
-      <Canvas>
-        <Environment files={'/hdr/hdr.hdr'} background/>
-        <OrbitControls makeDefault/>
-        <WalkRobot/>
-        <Ralph scale={0.005}/>
-        <mesh position={[0,-0.5,0]}>
-          <boxGeometry args={[5,1,5]}/>
-          <meshStandardMaterial color="gold" roughness={0} metalness={1} side={THREE.DoubleSide}/>
-        </mesh>
+      <Canvas camera={{
+        position: [-5.958562858640552,
+          1.5060335726855252,
+        -0.32453294258008203]
+      }}>
+        <Environment files={'/hdr/hdr.hdr'} />
+        <OrbitControls makeDefault />
+        <MainPage />
       </Canvas>
     </div>
   )

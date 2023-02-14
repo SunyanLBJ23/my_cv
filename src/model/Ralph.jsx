@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useEffect } from 'react'
+import { useFrame } from '@react-three/fiber'
 
 export function Ralph(props) {
   const group = useRef()
@@ -8,8 +9,11 @@ export function Ralph(props) {
   const { actions } = useAnimations(animations, group)
   useEffect(()=>{
     console.log("actions----",actions);
-    actions.Scan.play()
+    actions.Walk.play()
   },[])
+  useFrame(()=>{
+    group.current.position.z+=0.01
+  })
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

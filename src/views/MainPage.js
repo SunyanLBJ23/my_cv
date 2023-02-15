@@ -3,6 +3,7 @@ import { Ralph } from '../model/Ralph.jsx'
 import * as THREE from 'three'
 import { useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { Steve } from '../model/Steve.jsx'
 
 function MainPage() {
   const ref = useRef();
@@ -20,7 +21,8 @@ function MainPage() {
   })
   return (
     <group position={[0, -1, -4]} ref={ref}>
-      <Ralph scale={0.005} />
+      <Steve scale={0.3} position={[0,1.8,0]}/>
+      {/* <Ralph scale={0.005} /> */}
 
       <mesh position={[2.5, 2, 0]}>
         <boxGeometry args={[0.1, 10, 400]} />

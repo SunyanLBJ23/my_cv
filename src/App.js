@@ -16,7 +16,7 @@ function App() {
         -0.32453294258008203]
       }}>
         <Environment files={'/hdr/hdr.hdr'} />
-        <OrbitControls makeDefault />
+        {/* <OrbitControls makeDefault /> */}
         <MainPage />
       </Canvas>
     </div>

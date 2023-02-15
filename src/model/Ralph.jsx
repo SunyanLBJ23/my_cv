@@ -12,7 +12,7 @@ export function Ralph(props) {
     actions.Walk.play()
   },[])
   useFrame(()=>{
-    group.current.position.z+=0.01
+    group.current.position.z+=0.02
   })
   return (
     <group ref={group} {...props} dispose={null}>

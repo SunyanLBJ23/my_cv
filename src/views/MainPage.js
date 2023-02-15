@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Ralph } from '../model/Ralph.jsx'
 import * as THREE from 'three'
 import { useTexture } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 function MainPage() {
-
+  const ref = useRef();
   const wallMap = useTexture('/map/wallMap.jpg')
   wallMap.wrapS = THREE.RepeatWrapping;
   wallMap.wrapT = THREE.RepeatWrapping;
@@ -13,8 +14,12 @@ function MainPage() {
   wallMapN.wrapS = THREE.RepeatWrapping;
   wallMapN.wrapT = THREE.RepeatWrapping;
   wallMapN.repeat.set(40, 2)
+
+  useFrame(()=>{
+    ref.current.position.z-=0.02
+  })
   return (
-    <group position={[0, -1, -4]}>
+    <group position={[0, -1, -4]} ref={ref}>
       <Ralph scale={0.005} />
 
       <mesh position={[2.5, 2, 0]}>

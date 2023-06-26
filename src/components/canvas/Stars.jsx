@@ -9,6 +9,7 @@ import {
 import * as random from "maath/random/dist/maath-random.esm";
 import { SwimmingMan } from "./moonHuman/SwimmingMan";
 import { WalkingMan } from "./moonHuman/WalkingMan";
+import ParticleView from "./partcleView/ParticleView";
 
 const Stars = (props) => {
   const ref = useRef();
@@ -40,15 +41,12 @@ const StarsCanvas = () => {
   return (
     <div className="w-full h-full absolute inset-0 z-[-1]">
       <Canvas camera={{ position: [0, 0, 1] }}>
-        <OrbitControls makeDefault/>
+        <OrbitControls makeDefault enableZoom={false}/>
         <directionalLight intensity={1} />
         <Suspense fallback={null}>
           <Stars />
-          <mesh position={[0,-0.2,0]}>
-            <ringGeometry args={[0.14,0.16,800]}/>
-          </mesh>
-          <group position={[0,-0.7,0]}>
-            <SwimmingMan scale={0.3} />
+          <group >
+            <ParticleView />
           </group>
         </Suspense>
         <Preload all />

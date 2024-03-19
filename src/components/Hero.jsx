@@ -19,8 +19,11 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>sunyan</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            我熟悉Web界面开发,移动端混合开发 <br className='sm:block hidden' />
-            熟练开发网页3D场景和相关功能
+            我熟悉Web界面开发 &nbsp; 混合App开发 
+            <br className='sm:block hidden' />
+            熟练开发网页3D场景
+            <br className='sm:block hidden' />
+            使用 Nest.js 进行基础的服务端开发
           </p>
         </div>
       </div>

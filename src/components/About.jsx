@@ -78,16 +78,16 @@ const About = () => {
         <div>
           熟练使用
           <span className="font-bold" style={{ color: colors.react }}>
-            React
+            React 
           </span>
           +
           <span className="font-bold" style={{ color: colors.three }}>
-            Three.js
+             Three.js
           </span>
-          独立开发网页3D效果
+          独立开发网页3D平台
         </div>
         <div>
-          也能够使用
+          能够使用
           <span className="font-bold" style={{ color: colors.nodejs }}>
             Node.js
           </span>
@@ -99,7 +99,7 @@ const About = () => {
           <span className="font-bold" style={{ color: colors.nestjs }}>
             nest.js
           </span>
-          开发简单的后台系统
+          开发简单的后端服务
         </div>
         <div>能够在日常工作中高效率的工作以及快速学习</div>
       </motion.div>
